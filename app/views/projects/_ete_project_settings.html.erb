@@ -1,0 +1,62 @@
+<%
+    settings = EteProjectSetting.settings_for_project(@project)
+
+    all_statuses = []
+
+    @project.trackers.each do |tracker|
+      tracker.issue_statuses.each do |issue_status|
+        all_statuses << [issue_status.name, issue_status.id]
+      end
+    end
+
+    all_statuses.sort!
+    all_statuses.uniq!
+%>
+
+<%=
+  form_for @project,
+    :url => {:action => 'ete_project_settings', :id => @project},
+    :html => {:id => 'ete_project_settings-form', :method => :post} do |f|
+%>
+
+  <fieldset class="box">
+    <legend>
+      <b>
+        <%= l('redmine_enforce_time_entry.settings.header') %>
+      </b>
+    </legend>
+
+    <p>
+      <%= h l('redmine_enforce_time_entry.settings.info') %>
+    </p>
+
+    <div class="box tabular settings">
+      <p>
+        <%= content_tag :label, l('redmine_enforce_time_entry.settings.status_change_only') %>
+        <%= check_box_tag 'settings[enforce_time_entry][status_change_only]', 1, settings[:status_change_only] %>
+      </p>
+    </div>
+
+    <div class="box tabular settings">
+      <br><br>
+
+      <p>
+        <%= content_tag :label, l('redmine_enforce_time_entry.settings.status_from') %>
+        <%= select_tag "settings[enforce_time_entry][status_from]", options_for_select(all_statuses, settings[:status_from]), :multiple => true, :size => 20 %>
+      </p>
+    </div>
+
+    <div class="box tabular settings">
+      <p>
+        <%= content_tag :label, l('redmine_enforce_time_entry.settings.status_to') %>
+        <%= select_tag "settings[enforce_time_entry][status_to]", options_for_select(all_statuses, settings[:status_to]), :multiple => true, :size => 20 %>
+      </p>
+    </div>
+
+    <p>
+      <%= submit_tag l(:button_save) %>
+    </p>
+
+  </fieldset>
+<% end %>
+

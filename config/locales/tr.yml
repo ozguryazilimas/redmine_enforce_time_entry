@@ -1,0 +1,14 @@
+
+tr:
+  permission_ete_can_skip_log_time: Zaman Kaydı Girmeyebilir
+  redmine_enforce_time_entry:
+    missing_spent_time: Harcanan zaman girdisi eksik
+    settings:
+      header: Zorunlu Zaman Girdisi Ayarları
+      info: 'TODO'
+      label_enforce_time_entry: Zorunlu Zaman Girdisi
+      error_update_not_successful: Proje ayarları güncellenirken bir sorun oluştu
+      status_from: Önceki İş Durumu
+      status_to: Yeni İş Durumu
+      status_change_only: Sadece İş Durumu Değişimlerinde
+

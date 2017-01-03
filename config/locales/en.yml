@@ -1,0 +1,14 @@
+
+en:
+  permission_ete_can_skip_log_time: Can Skip Log Time
+  redmine_enforce_time_entry:
+    missing_spent_time: Missing spent time
+    settings:
+      header: Enforce Time Entry Settings
+      info: 'TODO'
+      label_enforce_time_entry: Enforce Time Entry
+      error_update_not_successful: Unable to update project settings
+      status_from: Previous Issue Status
+      status_to: New Issue Status
+      status_change_only: Only on Issue Status Changes
+
