@@ -29,9 +29,8 @@ module RedmineEnforceTimeEntry
       def ete_time_entry_param_has_all_values(time_entry_param)
         return false if time_entry_param.blank?
 
-        time_entry_param[:hours].present? &&
-        time_entry_param[:activity_id].present? &&
-        time_entry_param[:comments].present?
+        # time_entry_param[:comments].present?
+        time_entry_param[:hours].present? && time_entry_param[:activity_id].present?
       end
 
       def ete_status_changes_match_settings(settings, old_id, new_id)
