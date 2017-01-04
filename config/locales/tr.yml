@@ -5,10 +5,11 @@ tr:
     missing_spent_time: Harcanan zaman girdisi eksik
     settings:
       header: Zorunlu Zaman Girdisi Ayarları
-      info: 'TODO'
       label_enforce_time_entry: Zorunlu Zaman Girdisi
       error_update_not_successful: Proje ayarları güncellenirken bir sorun oluştu
       status_from: Önceki İş Durumu
       status_to: Yeni İş Durumu
       status_change_only: Sadece İş Durumu Değişimlerinde
+      info: Hangi koşullarda kullanıcıların zaman kaydı girmesinin zorunlu olacağını ayarlayınız. İş durumu listelerinde
+        birden fazla kayıt seçmek için Ctrl tuşunu basılı tutarken fare ile tıklayabilirsiniz. Ctrl-A tüm olasılıkları seçer.
 
