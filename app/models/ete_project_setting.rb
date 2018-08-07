@@ -2,7 +2,7 @@
 class EteProjectSetting < ActiveRecord::Base
   unloadable
 
-  attr_accessible :project_id, :status_from, :status_to, :status_change_only
+  attr_accessible :project_id, :status_from, :status_to, :status_change_only, :max_loggable_hours_per_day
 
   serialize :status_from
   serialize :status_to

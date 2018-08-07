@@ -10,7 +10,7 @@ module RedmineEnforceTimeEntry
 
         base.class_eval do
           unloadable
-          alias_method_chain :validate_time_entry, :max_hours_per_day
+          validate :should_not_exceed_max_loggable_hours
         end
 
       end
@@ -19,16 +19,26 @@ module RedmineEnforceTimeEntry
       end
 
       module InstanceMethods
-        def validate_time_entry_with_max_hours_per_day
+        def should_not_exceed_max_loggable_hours
           if hours
-            max_hours_per_day = Setting[:plugin_redmine_enforce_time_entry]['time_entry']['max_hours_per_day']
+            project_settings = EteProjectSetting.settings_for_project(project_id)
+            max_hours_per_day_for_project = project_settings['max_loggable_hours_per_day']
+            max_hours_per_day_global = Setting[:plugin_redmine_enforce_time_entry]['time_entry']['max_hours_per_day']
+                                           .to_f
+
+            if max_hours_per_day_for_project && max_hours_per_day_global >= max_hours_per_day_for_project
+              max_hours_per_day = max_hours_per_day_for_project
+            else
+              max_hours_per_day = max_hours_per_day_global
+            end
+
             if hours_changed?
               hours_currently_logged = 0.0
               if user_id && spent_on
                 hours_currently_logged = TimeEntry.where(user_id: user_id, spent_on: spent_on).where.not(id: id)
                                                   .sum(:hours).to_f
               end
-              if hours_currently_logged + hours > max_hours_per_day.to_f
+              if hours_currently_logged + hours > max_hours_per_day
                 errors.add :base, l('redmine_enforce_time_entry.settings.time_entry.exceeds_max_loggable_hours',
                                     hours_currently_logged: format_hours(hours_currently_logged),
                                     max_hours_per_day: format_hours(max_hours_per_day))
