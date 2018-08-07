@@ -56,8 +56,8 @@
     <div class="box tabular settings">
       <p>
         <%= content_tag :label, l('redmine_enforce_time_entry.settings.time_entry.max_loggable_hours_per_day') %>
-        <%= number_field_tag 'settings[enforce_time_entry][max_loggable_hours_per_day]',
-                             settings['max_loggable_hours_per_day'], :step => 0.1,
+        <%= number_field_tag 'settings[enforce_time_entry][limit_daily]',
+                             settings['limit_daily'], :step => 0.1,
                              :max => Setting[:plugin_redmine_enforce_time_entry]['time_entry']['max_hours_per_day'] %>
       </p>
     </div>
