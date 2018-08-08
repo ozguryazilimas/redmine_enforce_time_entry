@@ -23,14 +23,8 @@ module RedmineEnforceTimeEntry
           if hours
             project_settings = EteProjectSetting.settings_for_project(project_id)
             max_hours_per_day_for_project = project_settings['limit_daily']
-            max_hours_per_day_global = Setting[:plugin_redmine_enforce_time_entry]['time_entry']['max_hours_per_day']
-                                           .to_f
-
-            if max_hours_per_day_for_project && max_hours_per_day_global >= max_hours_per_day_for_project
-              max_hours_per_day = max_hours_per_day_for_project
-            else
-              max_hours_per_day = max_hours_per_day_global
-            end
+            max_hours_per_day_global = Setting[:plugin_redmine_enforce_time_entry]['time_entry']['limit_daily'].to_f
+            max_hours_per_day = [max_hours_per_day_for_project, max_hours_per_day_global].compact.min
 
             if hours_changed?
               hours_currently_logged = 0.0

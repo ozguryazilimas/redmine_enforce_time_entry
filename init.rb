@@ -17,7 +17,7 @@ Redmine::Plugin.register :redmine_enforce_time_entry do
   settings :partial => 'settings/time_entry_max_hours_per_day',
            :default => {
                'time_entry' => {
-                   'max_hours_per_day' => 24
+                   'limit_daily' => 24
                }
            }
 

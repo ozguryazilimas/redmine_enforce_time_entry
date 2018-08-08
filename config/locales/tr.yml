@@ -13,6 +13,6 @@ tr:
       info: Hangi koşullarda kullanıcıların zaman kaydı girmesinin zorunlu olacağını ayarlayınız. İş durumu listelerinde
         birden fazla kayıt seçmek için Ctrl tuşunu basılı tutarken fare ile tıklayabilirsiniz. Ctrl-A tüm olasılıkları seçer.
       time_entry:
-        max_loggable_hours_per_day: Aynı gün içerisinde kullanıcının girebileceği toplam saat
+        limit_daily: Aynı gün içerisinde kullanıcının girebileceği toplam saat
         exceeds_max_loggable_hours: "Aynı gün içerisinde %{max_hours_per_day} saatten fazlasını giremezsiniz,
                                      şu ana kadar %{hours_currently_logged} saat girdiniz."
