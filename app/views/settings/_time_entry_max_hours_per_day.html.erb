@@ -1,0 +1,7 @@
+<div class="box tabular settings">
+  <p>
+    <%= content_tag :label, l('redmine_enforce_time_entry.settings.time_entry.limit_daily') %>
+    <%= number_field_tag 'settings[time_entry][limit_daily]',
+                         settings['time_entry']['limit_daily'], :step => 0.1, :required => true %>
+  </p>
+</div>

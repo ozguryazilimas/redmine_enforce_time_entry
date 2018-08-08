@@ -12,4 +12,8 @@ en:
       status_change_only: Only on Issue Status Changes
       info: Configure when we should enforce users to log time. Press and hold Ctrl and click with mouse
         to do multiple select on issue status lists. Ctrl-A will select all.
+      time_entry:
+        limit_daily: Loggable hours by a user per day
+        exceeds_max_loggable_hours: "You cannot log more than %{max_hours_per_day} hours,
+                                     you have logged %{hours_currently_logged} hours today."
 
