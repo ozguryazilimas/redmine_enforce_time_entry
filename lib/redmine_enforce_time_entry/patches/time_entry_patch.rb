@@ -4,18 +4,11 @@ module RedmineEnforceTimeEntry
   module Patches
     module TimeEntryPatch
       def self.included(base)
-        base.extend(ClassMethods)
-
         base.send(:include, InstanceMethods)
 
         base.class_eval do
-          unloadable
           validate :should_not_exceed_max_loggable_hours
         end
-
-      end
-
-      module ClassMethods
       end
 
       module InstanceMethods

@@ -1,6 +1,5 @@
 
 class EteProjectSetting < ActiveRecord::Base
-  unloadable
 
   attr_accessible :project_id, :status_from, :status_to, :status_change_only, :limit_daily
 
