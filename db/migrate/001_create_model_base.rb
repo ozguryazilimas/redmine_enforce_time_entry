@@ -1,4 +1,4 @@
-class CreateModelBase < ActiveRecord::Migration
+class CreateModelBase < ActiveRecord::Migration[5.2]
 
   def change
     create_table :ete_project_settings do |t|
