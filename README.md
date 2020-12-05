@@ -3,6 +3,8 @@
 Allows forcing users to log time on issue update for configurable conditions. Conditions can be set globally or
 per project. Project settings override global settings.
 
+This plugin is compatible with Redmine 4.x. If you want to use it with Redmine 3.x please use redmine3 branch.
+
 
 ## Features
 
@@ -30,4 +32,8 @@ spent time.
 Loggable hours by a user per day can also be defined in the settings, which will prevent users to log more hours than configured. You can for example
 prevent users to log more than 24 hours per day.
 
+
+## License
+
+Copyright (c) 2016 - 2020 Onur Küçük. Licensed under [GNU GPLv2](LICENSE)
 

@@ -11,7 +11,10 @@ module RedmineEnforceTimeEntry
       module InstanceMethods
 
         def ete_project_settings
-          @settings = params[:settings][:enforce_time_entry]
+          settings_scope = params[:settings]
+          settings_scope.permit!
+          @settings = settings_scope[:enforce_time_entry]
+          @settings.permit!
 
           RedmineEnforceTimeEntry.default_settings.each do |k, v|
             @settings[k] ||= v

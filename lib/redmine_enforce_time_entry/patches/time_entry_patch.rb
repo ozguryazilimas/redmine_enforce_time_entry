@@ -12,6 +12,7 @@ module RedmineEnforceTimeEntry
       end
 
       module InstanceMethods
+
         def should_not_exceed_max_loggable_hours
           if hours
             project_settings = EteProjectSetting.settings_for_project(project_id)
@@ -21,10 +22,12 @@ module RedmineEnforceTimeEntry
 
             if hours_changed?
               hours_currently_logged = 0.0
+
               if user_id && spent_on
                 hours_currently_logged = TimeEntry.where(user_id: user_id, spent_on: spent_on).where.not(id: id)
                                                   .sum(:hours).to_f
               end
+
               if hours_currently_logged + hours > max_hours_per_day
                 errors.add :base, l('redmine_enforce_time_entry.settings.time_entry.exceeds_max_loggable_hours',
                                     hours_currently_logged: format_hours(hours_currently_logged),
@@ -33,6 +36,7 @@ module RedmineEnforceTimeEntry
             end
           end
         end
+
       end
     end
   end
