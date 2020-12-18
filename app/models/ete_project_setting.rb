@@ -1,8 +1,6 @@
 
 class EteProjectSetting < ActiveRecord::Base
 
-  attr_accessible :project_id, :status_from, :status_to, :status_change_only, :limit_daily
-
   serialize :status_from
   serialize :status_to
 
