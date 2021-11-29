@@ -18,7 +18,8 @@ Enforcing can happen
 ## Settings
 
 Go to project setting page for projects that you want to enable enforcing, enable the module in the modules section. You should now see
-the settings tab for Enforce Time Entry. Configure your preferences. Note that you can select / unselect multipe values by clicking with mouse button
+the settings tab for Enforce Time Entry. Users with permission `edit_project` can also see the configuration tab.
+Configure your preferences. Note that you can select / unselect multipe values by clicking with mouse button
 while holding the Ctrl key. Also after clicking one of the status boxes (multi selects) Ctrl-A will select all.
 
 When an issue is updated, assume issue status is X and it is changed to Y. The user will be required to enter Spent Time when
