@@ -5,7 +5,7 @@ Redmine::Plugin.register :redmine_enforce_time_entry do
   name 'Redmine Enforce Time Entry Plugin'
   author 'Onur Kucuk'
   description 'Force users to enter time entries'
-  version '1.0.0'
+  version '1.0.1'
   url 'http://www.ozguryazilim.com.tr'
   author_url 'http://www.ozguryazilim.com.tr'
   requires_redmine :version_or_higher => '4.0.0'
@@ -24,6 +24,8 @@ Redmine::Plugin.register :redmine_enforce_time_entry do
 end
 
 Rails.configuration.to_prepare do
+  Redmine::AccessControl.permission(:edit_project).actions << 'projects/ete_project_settings'
+
   [
     [ProjectsController, RedmineEnforceTimeEntry::Patches::ProjectsControllerPatch],
     [ProjectsHelper, RedmineEnforceTimeEntry::Patches::ProjectsHelperPatch],
