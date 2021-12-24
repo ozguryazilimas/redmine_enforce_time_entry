@@ -1,0 +1,19 @@
+
+fr:
+  permission_ete_can_skip_log_time: Contournement possible de la saisie
+  redmine_enforce_time_entry:
+    missing_spent_time: Temps passés manquants
+    settings:
+      header: Paramètres de la saisie obligatoire des temps passés
+      label_enforce_time_entry: Saisie obligatoire des temps passés
+      error_update_not_successful: Mise à jour des paramètres du projet impossible
+      status_from: Statut précédent
+      status_to: Statut suivant
+      status_change_only: Uniquement lors du changement de statut
+      info: Configurez quand il faut obliger les utilisateurs à saisir du temps. Maintenez la touche Ctrl enfoncée et cliquez avec la souris
+        pour effectuer une sélection multiple sur les listes des statuts. 
+      time_entry:
+        limit_daily: Heures possibles pour un utilisateur par jour
+        exceeds_max_loggable_hours: "Vous ne pouvez pas saisir plus de %{max_hours_per_day} heure(s),
+                                     vous avez saisi %{hours_currently_logged} heure(s) aujourd'hui."
+
