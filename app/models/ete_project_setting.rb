@@ -1,8 +1,8 @@
 
 class EteProjectSetting < ActiveRecord::Base
 
-  serialize :status_from
-  serialize :status_to
+  serialize :status_from, JSON
+  serialize :status_to, JSON
 
   scope :for_project, -> (project) {
     proj_id = project.is_a?(Class) ? project.id : project

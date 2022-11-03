@@ -5,7 +5,7 @@ Redmine::Plugin.register :redmine_enforce_time_entry do
   name 'Redmine Enforce Time Entry Plugin'
   author 'Onur Kucuk'
   description 'Force users to enter time entries'
-  version '1.0.2'
+  version '1.1.0'
   url 'http://www.ozguryazilim.com.tr'
   author_url 'http://www.ozguryazilim.com.tr'
   requires_redmine :version_or_higher => '4.0.0'
