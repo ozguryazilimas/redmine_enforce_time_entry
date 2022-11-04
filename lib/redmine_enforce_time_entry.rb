@@ -1,4 +1,4 @@
-require 'redmine_enforce_time_entry/hooks/controller_issues_edit_before_save_hook'
+require_dependency File.join(File.dirname(__FILE__), 'redmine_enforce_time_entry/hooks/controller_issues_edit_before_save_hook')
 
 module RedmineEnforceTimeEntry
 

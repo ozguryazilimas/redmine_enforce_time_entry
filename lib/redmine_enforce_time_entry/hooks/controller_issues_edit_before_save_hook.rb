@@ -1,6 +1,6 @@
 module RedmineEnforceTimeEntry
   module Hooks
-    class ControllerIssuesEditBeforeSaveHook < Redmine::Hook::ViewListener
+    class ControllerIssuesEditBeforeSaveHook < ::Redmine::Hook::ViewListener
 
       def controller_issues_edit_before_save(context={})
         return '' unless context[:project].module_enabled?('enforce_time_entry')
