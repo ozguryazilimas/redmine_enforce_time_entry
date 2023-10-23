@@ -1,5 +1,5 @@
 require 'redmine'
-require_dependency File.join(File.dirname(__FILE__), 'redmine_enforce_time_entry')
+require_dependency File.join(File.dirname(__FILE__), 'lib/redmine_enforce_time_entry')
 
 Redmine::Plugin.register :redmine_enforce_time_entry do
   name 'Redmine Enforce Time Entry Plugin'
